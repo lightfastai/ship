@@ -20,13 +20,17 @@ _Avoid_: Blanket mutation authority
 A deployment, production change, publication, release, migration, destructive action, paid execution, permission expansion, or comparable external effect requiring explicit Request inclusion and native approval.
 _Avoid_: Implied shipping step
 
-**Direct work**:
-Delivery work performed by the root Orchestrator Session rather than through a Target Task.
-_Avoid_: Untracked work
+**Coordination-only root**:
+The root Orchestrator Session that owns the outcome while routing every Target Project mutation through bounded native Target Tasks.
+_Avoid_: Direct Target Project mutation, implementation handoff
 
 **Target task**:
-A native Codex task opened in a Target Project for a bounded part of the Shipping Request.
-_Avoid_: Orchestrator Delegation, mandatory worker
+A native Codex task opened in a Target Project to own a bounded mutation or other execution objective within the Shipping Request.
+_Avoid_: Orchestrator Delegation, copied work item
+
+**Orchestration-native evidence management**:
+Root coordination over disposable Workflow Plans and native task lineage, including dispatch, monitoring, reconciliation, and blocker isolation, without mutating Target Project artifacts or delivery state.
+_Avoid_: Completion registry, implementation work
 
 **Integrated result**:
 The exact Target Project state at which its acceptance and integration boundary is evaluated.

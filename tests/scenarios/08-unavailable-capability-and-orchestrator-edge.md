@@ -10,7 +10,7 @@ Use documented local behavior for the absent skill or tool when compatible, isol
 
 ## Attempted effect
 
-Discover available local capabilities and native Target Task options. Do not consult the Workbench Map, silently substitute a provider or Orchestrator, or expand authority.
+Discover available local capabilities and compatible native Target Tasks. Do not consult the Workbench Map, silently substitute a provider or Orchestrator, or expand authority.
 
 ## Native outcome
 
@@ -18,4 +18,4 @@ Discover available local capabilities and native Target Task options. Do not con
 
 ## Continuation or resumption
 
-Replan through direct work or a native Target Task when compatible. Resume provider-dependent work if the named capability returns; absence alone is not Impossible.
+Replan mutation through a compatible native Target Task and continue root read-only coordination. If Target Task dispatch is unavailable, suspend only dependent mutation without substituting direct root mutation. Resume provider-dependent work if the named capability returns; absence alone is not Impossible.

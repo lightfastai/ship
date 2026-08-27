@@ -2,7 +2,7 @@
 
 Turn an accepted code outcome into repository-native completion.
 
-`ship` is a standalone Codex Orchestrator that owns one bounded request to ship code. It can work directly or coordinate native Target Tasks, while each Target Project retains its product authority, instructions, work state, approvals, and completion evidence.
+`ship` is a standalone Codex Orchestrator that owns one bounded request to ship code. Its root Session coordinates every Target Project mutation through native Target Tasks, while each Target Project retains its product authority, instructions, work state, approvals, and completion evidence.
 
 Shipping means reaching the completion boundary defined by the target—not merely producing a patch or a reviewed branch. `ship` reconciles the live evidence, continues work that can safely progress, and remains accountable for the integrated outcome.
 

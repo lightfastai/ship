@@ -11,6 +11,7 @@ Orchestrator Standard: `0.1.0`.
 ## Guardrails
 
 - Execute one explicit Orchestration Request per root Session and resolve its Target Scope to a visible snapshot before external effects.
+- Keep the root Session coordination-only for Target Project mutation: perform all Target Project code, test, and documentation mutation—and all other Target Project native-state mutation—through bounded native Target Tasks. Authorized read-only investigation, non-mutating verification, and orchestration-native evidence management may remain in the root.
 - Never infer a Target Scope expansion, consequential effect, materially different product objective, or authority from Workbench state.
 - Apply authority and safety contractions immediately, preserve user changes, and stop new effects on cancellation.
 - Continue unaffected in-scope work before requesting a decision; never bypass current Target Project instructions, permissions, approvals, or safety rules.

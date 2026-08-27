@@ -10,7 +10,7 @@ EXPECTED_SCENARIOS = {
     "02-multi-project-scope-and-expansion.md",
     "03-existing-and-overlapping-work.md",
     "04-live-authority-contraction.md",
-    "05-root-direct-work-interruption.md",
+    "05-root-coordination-and-target-task-interruption.md",
     "06-target-task-interruption.md",
     "07-post-completion-reconciliation.md",
     "08-unavailable-capability-and-orchestrator-edge.md",
@@ -33,7 +33,11 @@ REQUIRED_COVERAGE = {
     "02-multi-project-scope-and-expansion.md": ("multi-project", "scope expansion"),
     "03-existing-and-overlapping-work.md": ("overlapping", "duplicate"),
     "04-live-authority-contraction.md": ("instructions", "credentials", "provider"),
-    "05-root-direct-work-interruption.md": ("before any mutation", "pull request"),
+    "05-root-coordination-and-target-task-interruption.md": (
+        "coordination-only",
+        "all Target Project mutation",
+        "Target Task",
+    ),
     "06-target-task-interruption.md": ("source task identifier", "replacement"),
     "07-post-completion-reconciliation.md": ("after native completion", "duplicate"),
     "08-unavailable-capability-and-orchestrator-edge.md": (
@@ -74,6 +78,29 @@ class ScenarioContractTests(unittest.TestCase):
         self.assertIn("WorkBench state".lower(), agents.lower())
         self.assertIn("WorkBench absence".lower(), architecture.lower())
         self.assertIn("no hard runtime dependency", architecture)
+
+    def test_root_coordinates_all_target_project_mutation_through_target_tasks(self):
+        agents = (ROOT / "AGENTS.md").read_text()
+        architecture = (ROOT / "docs" / "architecture.md").read_text()
+        authority = (ROOT / "docs" / "authority.md").read_text()
+        recovery = (ROOT / "docs" / "recovery.md").read_text()
+        context = (ROOT / "CONTEXT.md").read_text()
+        adr = (
+            ROOT
+            / "docs"
+            / "adr"
+            / "0001-outcome-owned-coordination-through-target-tasks.md"
+        ).read_text()
+
+        self.assertIn("coordination-only", agents)
+        self.assertIn("all Target Project code, test, and documentation mutation", agents)
+        self.assertIn("root Session is coordination-only", architecture)
+        self.assertIn("all Target Project mutation", architecture)
+        self.assertIn("may not perform Target Project mutation directly", authority)
+        self.assertIn("resume or dispatch a compatible Target Task", recovery)
+        self.assertIn("**Coordination-only root**", context)
+        self.assertNotIn("**Direct work**", context)
+        self.assertIn("coordination-only", adr)
 
 
 if __name__ == "__main__":

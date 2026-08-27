@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`ship` owns one bounded Request to ship code to Target Project-defined completion. It dynamically performs or coordinates the research, reversible design clarification, implementation, testing, repair, review, integration, tracker reconciliation, and verification necessary for that outcome.
+`ship` owns one bounded Request to ship code to Target Project-defined completion. The root Session is coordination-only for Target Project mutation: it reconciles and investigates read-only evidence, constructs disposable Workflow Plans, dispatches bounded native Target Tasks for all Target Project mutation, monitors native lineage, isolates blockers, and verifies review, checks, integration, and terminal completion.
 
 ## Non-goals
 
@@ -15,7 +15,7 @@
 - replace Target Project instructions, product authority, or native work state;
 - require a Target Project adoption file, pre-existing issue, or specification;
 - maintain a registry, charter, programme, checkpoint, or copied work graph;
-- prescribe fixed phases, mandatory task decomposition, or one pull request per work item; or
+- prescribe fixed phases, fixed task decomposition, one task per work item, or one pull request per work item; or
 - consult the Orchestrator Design Workbench or Orchestrator Map at runtime.
 
 ## Inputs and admission
@@ -42,8 +42,9 @@ The Target Scope is resolved to a visible snapshot before external effects. The 
 - Effective authority is the narrowest intersection of the Request, snapshotted Target Scope, this Operating Contract, current Target Project instructions, platform permissions and approvals, and safety rules.
 - Target Scope expansions require explicit user approval. Contractions apply immediately.
 - Changed instructions, permissions, credentials, approval rules, cancellation, or safety constraints immediately narrow new effects even when a prior Workflow Plan used older controls.
+- The root Session performs every Target Project mutation through a bounded native Target Task. Authorized read-only investigation, non-mutating verification, and orchestration-native evidence management may remain in the root.
 - Durable work and completion evidence remain in native authority homes.
-- Direct work and Target Task work obey the same reconciliation, duplicate-prevention, user-change-preservation, and recovery rules.
+- Every Target Task obeys the same reconciliation, duplicate-prevention, user-change-preservation, and recovery rules.
 - An unchanged failed action is not repeated without materially changed evidence.
 - Cancellation stops new effects but does not authorize rollback.
 - Workbench absence cannot change runtime behavior.
@@ -52,7 +53,7 @@ The Target Scope is resolved to a visible snapshot before external effects. The 
 
 Within effective authority, `ship` may:
 
-- work directly or dispatch native Target Tasks;
+- investigate read-only evidence, maintain disposable Workflow Plans, and dispatch bounded native Target Tasks;
 - discover and use available skills, tools, apps, plugins, and providers;
 - order, branch, loop, suspend, or parallelize non-overlapping work;
 - choose reversible implementation details; and
@@ -62,11 +63,11 @@ It may not tune or expand the Request, Target Scope, product objective, conseque
 
 ## Evidence-driven planning
 
-Each Workflow Plan is Session-local and disposable. It is constructed from current instructions, native evidence, platform state, and unresolved gates. Direct work and Target Task dispatch are strategies, not phases.
+Each Workflow Plan is Session-local and disposable. It is constructed from current instructions, native evidence, platform state, and unresolved gates. Target Task selection, dispatch, and resumption are planning strategies, not fixed phases or a copied work graph.
 
-Use a Target Task only when it provides real leverage: Target Project instructions require it; work can proceed independently; or context isolation, specialist capability, parallelism, long-running ownership, or recovery materially helps. A Target Task inherits a bounded sub-objective and current target rules. The root Session retains terminal accountability.
+Use bounded native Target Tasks as the only execution boundary for Target Project mutation. The plan chooses task boundaries from current leverage and overlap: one task may own a coherent outcome, while independent or specialist work may use several non-overlapping tasks. Each Target Task inherits its bounded objective, snapshotted Target Scope, and current target rules. The root Session retains terminal accountability and never treats task completion as outcome completion.
 
-When reconsidering this direct-or-dispatch boundary, read [the outcome-owned delivery decision](adr/0001-outcome-owned-direct-or-delegated-delivery.md).
+When reconsidering this coordination boundary, read [the outcome-owned coordination decision](adr/0001-outcome-owned-coordination-through-target-tasks.md).
 
 ## Continuation-First
 
@@ -92,7 +93,7 @@ There is no `ship`-specific numeric task, concurrency, repair, retry, or Orchest
 
 `ship` has no hard runtime dependency beyond native Codex, repository, task, and platform surfaces. Optional capabilities are discovered dynamically; their absence isolates only dependent work.
 
-Native Target Task dispatch is not capital-D Orchestrator Delegation. v1 declares no child Orchestrator relationship. An unavailable, incompatible, undeclared, or cyclic Orchestrator edge is rejected and control remains with `ship`; it neither consults the Workbench Map nor silently substitutes another Orchestrator.
+Native Target Task dispatch is the required execution boundary for Target Project mutation, not capital-D Orchestrator Delegation. v1 declares no child Orchestrator relationship. If Target Task dispatch is unavailable, only dependent mutation suspends while authorized root coordination and unaffected work continue; the root never substitutes direct mutation. An unavailable, incompatible, undeclared, or cyclic Orchestrator edge is rejected and control remains with `ship`; it neither consults the Workbench Map nor silently substitutes another Orchestrator.
 
 ## Terminal conditions
 
