@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://lightfast.ai/images/github-banner.png" alt="Lightfast" width="100%" />
-</p>
-
 # Ship
 
 Turn an accepted code outcome into repository-native completion.
