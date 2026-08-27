@@ -14,7 +14,7 @@ Construct and execute the next Workflow Plan without querying a central registry
 
 ## Native outcome
 
-Runtime authority, planning, recovery, task selection, completion, and optional Target Task dispatch behave exactly as before Workbench loss.
+Runtime authority, planning, recovery, task selection, completion, and required Target Task dispatch for mutation behave exactly as before Workbench loss.
 
 ## Continuation or resumption
 

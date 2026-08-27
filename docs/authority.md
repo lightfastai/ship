@@ -20,23 +20,27 @@ For every effect, authority is the narrowest intersection of:
 
 Instructions, permissions, credentials, approval rules, cancellation, and safety contractions take effect immediately. A stale Workflow Plan grants nothing.
 
+The root may investigate, plan, dispatch and monitor native Target Tasks, reconcile evidence, isolate blockers, and verify outcomes, but it may not perform Target Project mutation directly. Every Target Project write, including code, tests, documentation, issues, specifications, branches, commits, pull requests, reviews, merges, trackers, and authorized consequential effects, must be owned by a bounded native Target Task. Authorized read-only investigation, non-mutating verification, and orchestration-native evidence management may remain in the root.
+
 ## Effect categories
 
 | Effect | Required authority | Native evidence | If unavailable |
 | --- | --- | --- | --- |
 | Inspect repositories, trackers, tasks, and delivery evidence | Request, Target Scope, and current read access | Repository, tracker, and task history | Continue another branch, narrow scope, or request indispensable access |
-| Research and make reversible delivery choices | Bounded code outcome and target evidence | Native issue, specification, task, or code when material | Investigate; ask only if incompatible product/value choices remain |
-| Create or refine native issues and specifications | Necessary delivery work permitted by target rules | Target-native tracker or repository | Work from sufficient Request evidence or suspend the dependent work |
-| Edit, test, repair, branch, commit, and open pull requests | Ordinary delivery authority and a non-conflicting write surface | Task, branch, worktree, commit, check, and pull request | Work directly, use an optional Target Task, replan, or suspend |
-| Review, merge, update trackers, and verify integration | Request to ship plus target-defined checks, reviews, and integration rules | Review, merge, default-branch, tracker, and verification state | Continue independent work or await the smallest native gate |
-| Clean up safely disposable, Orchestrator-created workspaces | Reconciled native results, clear ownership, and target permission | Workspace and task evidence | Preserve when ownership, recovery value, or safety is uncertain |
-| Deploy, change production, publish, release, migrate data, destroy, use paid execution, acquire broader credentials or permissions, or cause external legal, billing, security, or ownership effects | Explicit Request inclusion and applicable native approval | The owning Target Project or external system | Suspend only dependent work; never infer authority |
+| Construct or revise Workflow Plans and manage native Target Task lineage | Request, Target Scope, and platform task authority | Session plan and native task history | Continue another coordination branch or suspend the dependent dispatch |
+| Research and make reversible delivery choices without Target Project mutation | Bounded code outcome and target evidence | Session evidence or target-native evidence read through current access | Investigate; ask only if incompatible product/value choices remain |
+| Create or refine native issues and specifications | Necessary delivery authority plus a bounded native Target Task | Target-native tracker or repository | Resume or dispatch a compatible Target Task, or suspend the dependent work |
+| Edit, test, repair, branch, commit, and open pull requests | Ordinary delivery authority, a bounded native Target Task, and a non-conflicting write surface | Task, branch, worktree, commit, check, and pull request | Resume or dispatch a compatible Target Task, replan, or suspend |
+| Submit reviews, merge, or update trackers | Request to ship, a bounded native Target Task, and target-defined checks, reviews, and integration rules | Review, merge, default-branch, and tracker state | Continue independent work or await the smallest native gate |
+| Verify reviews, checks, integration, and completion without mutation | Request, Target Scope, target-defined rules, and current read access | Review, check, default-branch, tracker, and verification state | Continue independent work or await the smallest native gate |
+| Clean up safely disposable, Orchestrator-created workspaces | Reconciled native results, a bounded native Target Task, clear ownership, and target permission | Workspace and task evidence | Preserve when ownership, recovery value, or safety is uncertain |
+| Deploy, change production, publish, release, migrate data, destroy, use paid execution, acquire broader credentials or permissions, or cause external legal, billing, security, or ownership effects | Explicit Request inclusion, a bounded native Target Task, and applicable native approval | The owning Target Project or external system | Suspend only dependent work; never infer authority |
 
-Merge is authorized by a Shipping Request when the exact proposed head satisfies acceptance, required native gates pass, the Request has not excluded merge, and current Target Project rules permit it. Root or Target Task may merge as those rules allow.
+Merge is authorized by a Shipping Request when the exact proposed head satisfies acceptance, required native gates pass, the Request has not excluded merge, and current Target Project rules permit it. A bounded native Target Task may merge as those rules allow; the root verifies the resulting integration evidence.
 
 ## Product decisions
 
-`ship` may research ambiguity, prepare a design or specification, recommend a choice, and record reversible choices needed for delivery. It may not invent a materially different objective, reprioritize unrelated work, or decide between incompatible product-value choices unsupported by the Request and Target Project evidence.
+`ship` may research ambiguity, prepare a Session-local design, recommend a choice, and route target-native specifications or reversible delivery choices through a bounded native Target Task. It may not invent a materially different objective, reprioritize unrelated work, or decide between incompatible product-value choices unsupported by the Request and Target Project evidence.
 
 When the indispensable decision belongs to a human or Target Project authority, suspend only its dependent work and continue every unaffected in-scope branch.
 
